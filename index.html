@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>LearnLoop | Educational Resource Hub</title>
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+		<style>
+			:root {
+			--ink: #14213d;
+			--paper: #f3f6f9;
+			--marigold: #f2a900;
+			--teal: #1f8a83;
+			--mist: #dfe7ef;
+			}
+			html { scroll-behavior: smooth; scroll-padding-top: 70px; }
+			body { font-family: "Source Sans 3", system-ui, sans-serif; color: var(--ink); background: var(--paper); line-height: 1.6; }
+			h1, h2, h3, h4, .navbar-brand { font-family: "Bricolage Grotesque", system-ui, sans-serif; font-weight: 700; letter-spacing: -0.01em; }
+
+			.navbar { background: var(--ink); }
+			.navbar .nav-link { color: #fff; font-weight: 600; }
+			.navbar .nav-link:hover, .navbar .nav-link:focus { color: var(--marigold); }
+			.navbar-brand { color: var(--marigold) !important; font-size: 1.4rem; }
+			.navbar-toggler { border-color: rgba(255,255,255,.5); }
+			.navbar-toggler-icon { filter: invert(1); }
+
+			.btn-hub { background: var(--marigold); color: var(--ink); font-weight: 700; border: 2px solid var(--ink); border-radius: 0.5rem; }
+			.btn-hub:hover { background: var(--ink); color: var(--marigold); border-color: var(--ink); }
+			.btn-outline-hub { border: 2px solid var(--ink); color: var(--ink); font-weight: 700; border-radius: 0.5rem; }
+			.btn-outline-hub:hover { background: var(--ink); color: #fff; }
+
+			section { padding: 4.5rem 0; }
+			.section-title { font-size: clamp(1.8rem, 4vw, 2.6rem); font-weight: 800; margin-bottom: 0.5rem; }
+			.section-lead { max-width: 60ch; margin-bottom: 2rem; }
+
+			#home { background: var(--ink); color: #fff; padding: 5rem 0 4rem; }
+			#home h1 { font-size: clamp(2.4rem, 7vw, 4.4rem); font-weight: 800; line-height: 1.05; }
+			#home .hero-mark { color: var(--marigold); }
+			#introduction { max-width: 56ch; font-size: 1.15rem; color: var(--mist); margin-top: 1.25rem; }
+			.stat-box { border-left: 4px solid var(--marigold); padding-left: 1rem; }
+			.stat-box strong { display: block; font-family: "Bricolage Grotesque", sans-serif; font-size: 1.8rem; color: #fff; }
+			.stat-box span { color: var(--mist); }
+
+			.featured-card { background: #fff; border: 2px solid var(--ink); border-radius: 0.75rem; height: 100%; box-shadow: 6px 6px 0 var(--marigold); }
+			.tag { display: inline-block; background: var(--mist); color: var(--ink); font-size: 0.85rem; font-weight: 600; padding: 0.15rem 0.65rem; border-radius: 2rem; }
+
+			#categories-section { background: #fff; }
+			.category-tile { display: block; text-decoration: none; color: var(--ink); background: var(--paper); border-left: 6px solid var(--teal); border-radius: 0.5rem; padding: 1.25rem; height: 100%; transition: background .2s, border-color .2s; }
+			.category-tile:hover { background: var(--mist); border-color: var(--marigold); color: var(--ink); }
+			.category-tile h3 { font-size: 1.25rem; margin-bottom: 0.25rem; }
+			.category-tile p { margin: 0; font-size: 0.95rem; }
+
+			#resources .list-group-item { background: #fff; border: 0; border-bottom: 1px solid var(--mist); padding: 1.1rem 0.5rem; }
+			#resources a.res-link { color: var(--teal); font-weight: 600; }
+			#resources a.res-link:hover { color: var(--ink); }
+
+			#about { background: var(--mist); }
+			#mission { background: var(--ink); color: #fff; border-radius: 0.75rem; padding: 1.75rem; border-left: 8px solid var(--marigold); }
+			#mission h3 { color: var(--marigold); }
+
+			#contact .form-control:focus { border-color: var(--teal); box-shadow: 0 0 0 .2rem rgba(31,138,131,.25); }
+			a:focus-visible, button:focus-visible { outline: 3px solid var(--marigold); outline-offset: 2px; }
+
+			footer { background: var(--ink); color: var(--mist); padding: 1.5rem 0; text-align: center; }
+
+			@media (max-width: 575.98px) {
+			section { padding: 3rem 0; }
+			.featured-card { box-shadow: 4px 4px 0 var(--marigold); }
+			}
+			@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+		</style>
+	</head>
+	<body>
+
+		<nav class="navbar navbar-expand-lg sticky-top">
+			<div class="container">
+				<a class="navbar-brand" href="#home">LearnLoop</a>
+				<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+				<div class="collapse navbar-collapse" id="mainNav">
+					<ul class="navbar-nav ms-auto">
+						<li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+						<li class="nav-item"><a class="nav-link" href="#featured">Featured</a></li>
+						<li class="nav-item"><a class="nav-link" href="#categories-section">Categories</a></li>
+						<li class="nav-item"><a class="nav-link" href="#resources">Resources</a></li>
+						<li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+						<li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+
+		<header id="home">
+			<div class="container">
+				<div class="row align-items-center g-4">
+					<div class="col-lg-8">
+						<h1>Free ways to keep <span class="hero-mark">learning</span>, all in one place.</h1>
+						<p id="introduction">LearnLoop collects trusted courses, tutorials, and reference guides so students, teachers, and self-learners can find the right resource in minutes instead of hours.</p>
+						<div class="d-flex flex-wrap gap-2 mt-4">
+							<a href="#categories-section" class="btn btn-hub btn-lg">Browse categories</a>
+							<a href="#featured" class="btn btn-outline-light btn-lg fw-bold">See featured picks</a>
+						</div>
+					</div>
+					<div class="col-lg-4">
+						<div class="d-flex flex-lg-column gap-4">
+							<div class="stat-box"><strong>4</strong><span>subject categories</span></div>
+							<div class="stat-box"><strong>100%</strong><span>free to start</span></div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</header>
+
+		<main>
+			<section id="featured">
+				<div class="container">
+					<h2 class="section-title">Featured resources</h2>
+					<p class="section-lead">Hand-picked starting points our readers come back to most.</p>
+					<div class="row g-4">
+						<div class="col-12 col-md-6 col-lg-4">
+							<article class="featured-card p-4">
+								<span class="tag">Math</span>
+								<h3 class="h4 mt-3">Khan Academy</h3>
+								<p>Step-by-step lessons and practice from arithmetic to calculus.</p>
+								<a href="https://www.khanacademy.org" target="_blank" rel="noopener" class="btn btn-hub btn-sm">Visit site</a>
+							</article>
+						</div>
+						<div class="col-12 col-md-6 col-lg-4">
+							<article class="featured-card p-4">
+								<span class="tag">Programming</span>
+								<h3 class="h4 mt-3">freeCodeCamp</h3>
+								<p>Learn web development by building real projects, with free certifications.</p>
+								<a href="https://www.freecodecamp.org" target="_blank" rel="noopener" class="btn btn-hub btn-sm">Visit site</a>
+							</article>
+						</div>
+						<div class="col-12 col-md-6 col-lg-4">
+							<article class="featured-card p-4">
+								<span class="tag">Languages</span>
+								<h3 class="h4 mt-3">Duolingo</h3>
+								<p>Short daily lessons that make practicing a new language a habit.</p>
+								<a href="https://www.duolingo.com" target="_blank" rel="noopener" class="btn btn-hub btn-sm">Visit site</a>
+							</article>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<section id="categories-section">
+				<div class="container">
+					<h2 class="section-title">Categories</h2>
+					<p class="section-lead">Pick a subject to see sample resources below.</p>
+					<div id="categories" class="row g-3">
+						<div class="col-12 col-sm-6 col-lg-3">
+							<a class="category-tile" href="#resources">
+								<h3>Science</h3> 
+								<p>Biology, physics, chemistry, and earth science.</p>
+							</a>
+						</div>
+						<div class="col-12 col-sm-6 col-lg-3">
+							<a class="category-tile" href="#resources">
+								<h3>Math</h3>
+								<p>Practice problems and clear explanations.</p>
+							</a>
+						</div>
+						<div class="col-12 col-sm-6 col-lg-3">
+							<a class="category-tile" href="#resources">
+								<h3>Technology</h3>
+								<p>Coding, web design, and digital skills.</p>
+							</a>
+						</div>
+						<div class="col-12 col-sm-6 col-lg-3">
+							<a class="category-tile" href="#resources">
+								<h3>Languages</h3>
+								<p>Vocabulary, grammar, and speaking practice.</p>
+							</a>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<section id="resources">
+				<div class="container">
+					<h2 class="section-title">Sample resources</h2>
+					<p class="section-lead">A few links to try today.</p>
+					<ul class="list-group list-group-flush">
+						<li class="list-group-item d-flex flex-column flex-sm-row justify-content-between gap-1">
+							<div><strong>MDN Web Docs</strong> 
+								<span class="tag ms-2">Technology</span><br>Reference guides for HTML, CSS, and JavaScript.
+							</div>
+							<a class="res-link align-self-sm-center" href="https://developer.mozilla.org" target="_blank" rel="noopener">Open resource</a>
+						</li>
+						<li class="list-group-item d-flex flex-column flex-sm-row justify-content-between gap-1">
+							<div><strong>NASA STEM</strong> 
+								<span class="tag ms-2">Science</span><br>Activities and lessons about space and earth science.
+							</div>
+							<a class="res-link align-self-sm-center" href="https://www.nasa.gov/stem" target="_blank" rel="noopener">Open resource</a>
+						</li>
+						<li class="list-group-item d-flex flex-column flex-sm-row justify-content-between gap-1">
+							<div><strong>Desmos</strong> 
+								<span class="tag ms-2">Math</span><br>A free graphing calculator and classroom activities.
+							</div>
+							<a class="res-link align-self-sm-center" href="https://www.desmos.com" target="_blank" rel="noopener">Open resource</a>
+						</li>
+						<li class="list-group-item d-flex flex-column flex-sm-row justify-content-between gap-1">
+							<div><strong>BBC Learning English</strong> 
+								<span class="tag ms-2">Languages</span><br>Short lessons and videos for English learners.
+							</div>
+							<a class="res-link align-self-sm-center" href="https://www.bbc.co.uk/learningenglish" target="_blank" rel="noopener">Open resource</a>
+						</li>
+					</ul>
+				</div>
+			</section>
+
+			<section id="about">
+				<div class="container">
+					<div class="row g-4 align-items-center">
+						<div class="col-lg-6">
+							<h2 class="section-title">About LearnLoop</h2>
+							<p>LearnLoop started as a class project to answer one question: where do I begin? We review each resource for clear teaching, honest pricing, and a friendly start for beginners.</p>
+							<p>New links are added every week, and every listing is checked to make sure it still works.</p>
+						</div>
+						<div class="col-lg-6">
+							<div id="mission">
+								<h3>Our mission</h3>
+								<p class="mb-0">To make quality education easy to find and free to reach, so anyone with a device and curiosity can keep growing.</p>
+							</div>
+						</div>															
+					</div>
+				</div>
+			</section>
+
+			<section id="contact">
+				<div class="container">
+					<div class="row g-5">
+						<div class="col-lg-5">
+							<h2 class="section-title">Contact us</h2>
+							<p>Know a great resource? Found a broken link? Send us a note.</p>
+							<ul class="list-unstyled">
+								<li><strong>Email:</strong> <a href="mailto:hello@learnloop.example">hello@learnloop.example</a></li>
+								<li><strong>Phone:</strong> <a href="tel:+639000000000">+63 900 000 0000</a></li>
+								<li><strong>Location:</strong> Dasmariñas, Cavite, Philippines</li>
+							</ul>
+						</div>
+						<div class="col-lg-7">
+							<form id="contactForm" novalidate>
+								<div class="mb-3">
+									<label for="name" class="form-label">Name</label>
+									<input type="text" class="form-control" id="name" required>
+								</div>
+								<div class="mb-3">
+									<label for="email" class="form-label">Email</label>
+									<input type="email" class="form-control" id="email" required>
+								</div>
+								<div class="mb-3">
+									<label for="message" class="form-label">Message</label>
+									<textarea class="form-control" id="message" rows="4" required></textarea>
+								</div>
+								<button type="submit" class="btn btn-hub btn-lg">Send message</button>
+								<p id="formStatus" class="mt-3 fw-semibold" role="status"></p>
+							</form>
+						</div>
+					</div>
+				</div>
+			</section>
+		</main>
+
+		<footer>
+			<div class="container">
+				<small>&copy; 2026 LearnLoop. <a href="#home" class="text-warning">Back to top</a></small>
+			</div>
+		</footer>
+
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+		<script>
+		// Close the mobile menu after choosing a link
+		document.querySelectorAll('.navbar .nav-link').forEach(function (link) {
+		link.addEventListener('click', function () {
+		var menu = document.getElementById('mainNav');
+		if (menu.classList.contains('show')) {
+		bootstrap.Collapse.getOrCreateInstance(menu).hide();
+		}
+		});
+		});
+
+		// Simple contact form handling
+		document.getElementById('contactForm').addEventListener('submit', function (e) {
+		e.preventDefault();
+		var status = document.getElementById('formStatus');
+		if (!this.checkValidity()) {
+		status.textContent = 'Please fill in your name, a valid email, and a message.';
+		status.className = 'mt-3 fw-semibold text-danger';
+		return;
+		}
+		status.textContent = 'Thanks! Your message was sent.';
+		status.className = 'mt-3 fw-semibold text-success';
+		this.reset();
+		});
+		</script>
+	</body>
+</html>
